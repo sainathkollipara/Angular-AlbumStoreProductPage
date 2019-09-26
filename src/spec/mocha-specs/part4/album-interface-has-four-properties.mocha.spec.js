@@ -2,17 +2,17 @@ let fs = require('fs');
 let expect = require('chai').expect
 let assert = require('chai').assert
 
-describe('Album Interface', function () {
+describe('GiftProduct Interface', function () {
   it(`should have name property of type string @album-interface-has-four-properties`, function () {
     let file
     try {
       file = fs.readFileSync(__dirname + '/../../../app/album.ts').toString();
     } catch (e) {
-      assert(false, "The Album interface doesn't exist yet.")
+      assert(false, "The GiftProduct interface doesn't exist yet.")
     }
-    let re = /export\s+interface\s+Album\s*\{\s*([\w\s\:\;\[\]]+)\s*\}/
+    let re = /export\s+interface\s+GiftProduct\s*\{\s*([\w\s\:\;\[\]]+)\s*\}/
     let match = file.match(re);
-    assert(Array.isArray(match) && match != null, "There's an `album.ts` file, but it doesn't export an interface named `Album`.");
+    assert(Array.isArray(match) && match != null, "There's an `album.ts` file, but it doesn't export an interface named `GiftProduct`.");
     
     let arr = match[1].split('\n');
     for (let i = 0; i < arr.length; i++) {
@@ -39,8 +39,8 @@ describe('Album Interface', function () {
         }
       }
     }
-    assert(nameKeyFound, "The Album Interface doesn't define a property named `name`.");
-    assert(nameValueFound, "The Album Interface's `name` property isn't typed as `string`.");
+    assert(nameKeyFound, "The GiftProduct Interface doesn't define a property named `name`.");
+    assert(nameValueFound, "The GiftProduct Interface's `name` property isn't typed as `string`.");
   });
 
   it(`should have releaseDate property of type string @album-interface-has-four-properties`, function () {
@@ -48,11 +48,11 @@ describe('Album Interface', function () {
     try {
       file = fs.readFileSync(__dirname + '/../../../app/album.ts').toString();
     } catch (e) {
-      assert(false, "The Album interface doesn't exist yet.")
+      assert(false, "The GiftProduct interface doesn't exist yet.")
     }
-    let re = /export\s+interface\s+Album\s*\{\s*([\w\s\:\;\[\]]+)\s*\}/
+    let re = /export\s+interface\s+GiftProduct\s*\{\s*([\w\s\:\;\[\]]+)\s*\}/
     let match = file.match(re);
-    assert(Array.isArray(match) && match != null, "There's an `album.ts` file, but it doesn't export an interface named `Album`.");
+    assert(Array.isArray(match) && match != null, "There's an `album.ts` file, but it doesn't export an interface named `GiftProduct`.");
 
     let arr = match[1].split('\n');
     for (let i = 0; i < arr.length; i++) {
@@ -79,8 +79,8 @@ describe('Album Interface', function () {
         }
       }
     }
-    assert(releaseDateKeyFound, "The Album Interface doesn't define a property named `releaseDate`.");
-    assert(releaseDateValueFound, "The Album Interface's `releaseDate` property isn't typed as `string`.");
+    assert(releaseDateKeyFound, "The GiftProduct Interface doesn't define a property named `releaseDate`.");
+    assert(releaseDateValueFound, "The GiftProduct Interface's `releaseDate` property isn't typed as `string`.");
   });
 
   it(`should have coverImage property of type string @album-interface-has-four-properties`, function () {
@@ -88,11 +88,11 @@ describe('Album Interface', function () {
     try {
       file = fs.readFileSync(__dirname + '/../../../app/album.ts').toString();
     } catch (e) {
-      assert(false, "The Album interface doesn't exist yet.")
+      assert(false, "The GiftProduct interface doesn't exist yet.")
     }
-    let re = /export\s+interface\s+Album\s*\{\s*([\w\s\:\;\[\]]+)\s*\}/
+    let re = /export\s+interface\s+GiftProduct\s*\{\s*([\w\s\:\;\[\]]+)\s*\}/
     let match = file.match(re);
-    assert(Array.isArray(match) && match != null, "There's an `album.ts` file, but it doesn't export an interface named `Album`.");
+    assert(Array.isArray(match) && match != null, "There's an `album.ts` file, but it doesn't export an interface named `GiftProduct`.");
 
     let arr = match[1].split('\n');
     for (let i = 0; i < arr.length; i++) {
@@ -119,19 +119,19 @@ describe('Album Interface', function () {
         }
       }
     }
-    assert(coverImageKeyFound, "The Album Interface doesn't define a property named `coverImage`.");
-    assert(coverImageValueFound, "The Album Interface's `coverImage` property isn't typed as `string`.");
+    assert(coverImageKeyFound, "The GiftProduct Interface doesn't define a property named `coverImage`.");
+    assert(coverImageValueFound, "The GiftProduct Interface's `coverImage` property isn't typed as `string`.");
   });
-  it(`should have tracks property of type Track[] @album-interface-has-four-properties`, function () {
+  it(`should have tracks property of type Detail[] @album-interface-has-four-properties`, function () {
     let file
     try {
       file = fs.readFileSync(__dirname + '/../../../app/album.ts').toString();
     } catch (e) {
-      assert(false, "The Album interface doesn't exist yet.")
+      assert(false, "The GiftProduct interface doesn't exist yet.")
     }
-    let re = /export\s+interface\s+Album\s*\{\s*([\w\s\:\;\[\]]+)\s*\}/
+    let re = /export\s+interface\s+GiftProduct\s*\{\s*([\w\s\:\;\[\]]+)\s*\}/
     let match = file.match(re);
-    assert(Array.isArray(match) && match != null, "There's an `album.ts` file, but it doesn't export an interface named `Album`.");
+    assert(Array.isArray(match) && match != null, "There's an `album.ts` file, but it doesn't export an interface named `GiftProduct`.");
 
     let arr = match[1].split('\n');
     for (let i = 0; i < arr.length; i++) {
@@ -153,12 +153,12 @@ describe('Album Interface', function () {
     for (let i = 0; i < properties.length; i++) {
       if (properties[i].key == 'tracks') {
         tracksKeyFound = true;
-        if (properties[i].value.match(new RegExp(/Track\[\]/))) {
+        if (properties[i].value.match(new RegExp(/Detail\[\]/))) {
           tracksValueFound = true;
         }
       }
     }
-    assert(tracksKeyFound, "The Album Interface doesn't define a property named `tracks`.");
-    assert(tracksValueFound, "The Album Interface's `tracks` property isn't typed as `Track[]`.");
+    assert(tracksKeyFound, "The GiftProduct Interface doesn't define a property named `tracks`.");
+    assert(tracksValueFound, "The GiftProduct Interface's `tracks` property isn't typed as `Detail[]`.");
   });
 });

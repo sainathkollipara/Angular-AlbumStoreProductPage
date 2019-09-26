@@ -59,7 +59,7 @@ describe('ProductTracklisting', () => {
     mock_backend = mockBackend;
   }));
 
-  it(`should use track number data from the albumInfo.tracks property in the HTML template @product-tracklisting-html-uses-track-object-data`, async(() => {
+  it(`should use detail number data from the giftProductInfo.tracks property in the HTML template @product-tracklisting-html-uses-detail-object-data`, async(() => {
     since('The ProductTracklistingComponent doesn\'t exist - have you run the `ng` command to generate it yet?').expect(productTracklistingExists).toBe(true);
 
     mock_backend.connections.subscribe((connection: MockConnection) => {
@@ -72,16 +72,16 @@ describe('ProductTracklisting', () => {
     const ProductTracklistingFixture = TestBed.createComponent(ProductTracklistingComponent);
     ProductTracklistingFixture.detectChanges();
 
-    if (ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.track-number').length > 1) {
-      let tracksHtml = ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.track-number').forEach((element, index) => {
-        since('The track number in your HTML template doesn\'t match the track number in the JSON response.').expect(element.innerText).toEqual(json.album.tracks[index].trackNumber.toString());
+    if (ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.detail-number').length > 1) {
+      let tracksHtml = ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.detail-number').forEach((element, index) => {
+        since('The detail number in your HTML template doesn\'t match the detail number in the JSON response.').expect(element.innerText).toEqual(json.album.tracks[index].trackNumber.toString());
       });
     } else {
       since('The tracklisting data is not being populated by a JSON response yet.').expect(0).toBe(1);
     }
   }));
 
-  it(`should use track name data from the albumInfo.tracks property in the HTML template @product-tracklisting-html-uses-track-object-data`, async(() => {
+  it(`should use detail name data from the giftProductInfo.tracks property in the HTML template @product-tracklisting-html-uses-detail-object-data`, async(() => {
     since('The ProductTracklistingComponent doesn\'t exist - have you run the `ng` command to generate it yet?').expect(productTracklistingExists).toBe(true);
 
     mock_backend.connections.subscribe((connection: MockConnection) => {
@@ -94,16 +94,16 @@ describe('ProductTracklisting', () => {
     const ProductTracklistingFixture = TestBed.createComponent(ProductTracklistingComponent);
     ProductTracklistingFixture.detectChanges();
 
-    if (ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.track-number').length > 1) {
-      let tracksHtml = ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.track-name').forEach((element, index) => {
-        since('The track name in your HTML template doesn\'t match the track name in the JSON response.').expect(element.innerText).toEqual(json.album.tracks[index].trackName.toString());
+    if (ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.detail-number').length > 1) {
+      let tracksHtml = ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.detail-name').forEach((element, index) => {
+        since('The detail name in your HTML template doesn\'t match the detail name in the JSON response.').expect(element.innerText).toEqual(json.album.tracks[index].trackName.toString());
       });
     } else {
       since('The tracklisting data is not being populated by a JSON response yet.').expect(0).toBe(1);
     }
 }));
 
-  it(`should use track time data from the albumInfo.tracks property in the HTML template @product-tracklisting-html-uses-track-object-data`, async(() => {
+  it(`should use detail time data from the giftProductInfo.tracks property in the HTML template @product-tracklisting-html-uses-detail-object-data`, async(() => {
     since('The ProductTracklistingComponent doesn\'t exist - have you run the `ng` command to generate it yet?').expect(productTracklistingExists).toBe(true);
 
     mock_backend.connections.subscribe((connection: MockConnection) => {
@@ -116,16 +116,16 @@ describe('ProductTracklisting', () => {
     const ProductTracklistingFixture = TestBed.createComponent(ProductTracklistingComponent);
     ProductTracklistingFixture.detectChanges();
 
-    if (ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.track-number').length > 1) {
-      let tracksHtml = ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.track-time').forEach((element, index) => {
-        since('The track time in your HTML template doesn\'t match the track time in the JSON response.').expect(element.innerText).toEqual(json.album.tracks[index].trackLength.toString());
+    if (ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.detail-number').length > 1) {
+      let tracksHtml = ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.detail-time').forEach((element, index) => {
+        since('The detail time in your HTML template doesn\'t match the detail time in the JSON response.').expect(element.innerText).toEqual(json.album.tracks[index].trackLength.toString());
       });
     } else {
       since('The tracklisting data is not being populated by a JSON response yet.').expect(0).toBe(1);
     }
   }));
 
-  it(`should use track price data from the albumInfo.tracks property in the HTML template @product-tracklisting-html-uses-track-object-data`, async(() => {
+  it(`should use detail price data from the giftProductInfo.tracks property in the HTML template @product-tracklisting-html-uses-detail-object-data`, async(() => {
     since('The ProductTracklistingComponent doesn\'t exist - have you run the `ng` command to generate it yet?').expect(productTracklistingExists).toBe(true);
 
     mock_backend.connections.subscribe((connection: MockConnection) => {
@@ -138,9 +138,9 @@ describe('ProductTracklisting', () => {
     const ProductTracklistingFixture = TestBed.createComponent(ProductTracklistingComponent);
     ProductTracklistingFixture.detectChanges();
 
-    if (ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.track-number').length > 1) {
+    if (ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.detail-number').length > 1) {
       let tracksHtml = ProductTracklistingFixture.debugElement.nativeElement.querySelectorAll('.price-and-buy button').forEach((element, index) => {
-        since('The track price in your HTML template doesn\'t match the track price in the JSON response.').expect(element.innerText).toEqual(json.album.tracks[index].trackPrice.toString());
+        since('The detail price in your HTML template doesn\'t match the detail price in the JSON response.').expect(element.innerText).toEqual(json.album.tracks[index].trackPrice.toString());
       });
     } else {
       since('The tracklisting data is not being populated by a JSON response yet.').expect(0).toBe(1);

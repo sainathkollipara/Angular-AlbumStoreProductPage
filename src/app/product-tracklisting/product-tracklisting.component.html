@@ -1,14 +1,15 @@
-<div class="row tracklisting">
-  <ul>
-    <li *ngFor="let track of albumInfo?.album.tracks">
-      <div class="col-sm-5">
-        <span class="track-number">{{track.trackNumber}}</span>
-        <span class="track-name">{{track.trackName}}</span>
+<div class="grid-container">
+  
+    <div *ngFor="let detail of giftProductInfo?.giftproduct.details">
+      <div class="product" data-id="undefined">
+        <div class="product-img">
+          <img src={{detail.img}} alt="product image" />
+        </div>
+        <div class="product-details-1">
+            <div>{{detail.title}}</div>
+            <div class="price-1">${{detail.price}}</div>
+        </div>
       </div>
-      <div class="col-sm-3 text-right">
-        <span class="track-time">{{track.trackLength}}</span>
-        <span class="price-and-buy"><button>{{track.trackPrice}}</button></span>
-      </div>
-    </li>
-  </ul>
+    </div>
+
 </div>

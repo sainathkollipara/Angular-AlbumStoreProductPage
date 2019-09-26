@@ -1,10 +1,65 @@
-<div class="row description">
-  <div class="col-sm-2">
-    <img src={{albumInfo?.album.coverImage}} alt="product image" />
+<header>
+  <div class="search-container">
+            <div><input type="text" size="50" maxlength="100" id="find_term"></div>
+            <i class="fa fa-search search-button" id="find_button"></i>
   </div>
-  <div class="col-sm-6">
-    <p class="album-name">{{albumInfo?.album.name}}</p>
-    <p class="band-name">{{albumInfo?.artist}}</p>
-    <p class="album-release-date">{{albumInfo?.album.releaseDate}}</p>
-  </div>
-</div>
+</header>
+<div id="main">
+  <section id="catalog-header">
+      <div class="title filter-option" style="text-transform:capitalize;">
+          <span id="search_term_label">{{giftProductInfo?.giftproduct.name}} </span>
+      </div>
+      <div class="filter-option product-gifttype">
+          <div class="padding40">Select Category</div>
+          <div>
+              <div class="type_select" style="width:150px; text-transform:capitalize;">
+                  <select id="gifttype">
+                      <option value="0">All</option>
+                      <option value="1">Trending</option>
+                      <option value="2">Life Style</option>
+                      <option value="3">Home Decor</option>
+                      <option value="4">Electronics</option>
+                  </select>
+              </div>
+          </div>
+      </div>
+
+      <div class="customer-gifttype filter-option">
+          <div class="filter-title">GIFT FOR:</div>
+          <div class="customer-gifttype-options">
+              <div class="icon" value="0">
+                  <i class="fa fa-universal-access icon2"></i>
+                  <div>All</div>
+              </div>
+              <div class="icon" value="1">
+                  <i class="fa fa-male icon2"></i>
+                  <div>Man</div>
+              </div>
+              <div class="icon" value="2">
+                  <i class="fa fa-female icon2"></i>
+                  <div>Woman</div>
+              </div>
+              <div class="icon" value="3">
+                  <i class="fa fa-child icon2"></i>
+                  <div>Kids</div>
+              </div>
+              <div class="icon" value="4">
+                  <i class="fa fa-running icon2"></i>
+                  <div>Teens</div>
+              </div>
+          </div>
+          <input type="hidden" id="customer_category" value="0" />
+      </div>
+
+      <div class="filter-option price-range">
+          <div class="filter-title">Max Price:</div>
+          <input type="range" class="slider" id="price_range" min="0" max="4" step="1" value="4">
+          <div class="range-labels">
+              <span class="range-1">$25</span>
+              <span class="range-2">$50</span>
+              <span class="range-3">$100</span>
+              <span class="range-4">$1000</span>
+              <span class="range-5">Any</span>
+          </div>
+      </div>
+  </section>

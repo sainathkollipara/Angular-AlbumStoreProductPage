@@ -76,7 +76,7 @@ describe('ProductDescription', () => {
     mock_backend = mockBackend;
   }));
 
-  it(`should use album name data from the albumInfo property in the HTML template @product-description-html-uses-dynamic-albuminfo-name`, async(() => {
+  it(`should use album name data from the giftProductInfo property in the HTML template @product-description-html-uses-dynamic-albuminfo-name`, async(() => {
     since('The ProductService hasn\'t been created yet.').expect(productServiceExists).toBe(true);
     expect(productDescriptionComponentExists).toBe(true);
 
@@ -100,10 +100,10 @@ describe('ProductDescription', () => {
     if (htmlString != "") {
       const parser = new DOMParser();
       const htmlDoc = parser.parseFromString(htmlString, 'text/xml');
-      const re = /{{\s*albumInfo\?\.album\.name\s*}}/
-      since('We\'d like you to query the albumInfo property directly for the album name, and we\'re not seeing that you\'re doing that.').expect(htmlDoc.querySelector('.album-name').textContent.match(re)).toEqual(jasmine.any(Array));
+      const re = /{{\s*giftProductInfo\?\.album\.name\s*}}/
+      since('We\'d like you to query the giftProductInfo property directly for the album name, and we\'re not seeing that you\'re doing that.').expect(htmlDoc.querySelector('.album-name').textContent.match(re)).toEqual(jasmine.any(Array));
     } else {
-      since('We\'d like you to query the albumInfo property directly for the album name, and we\'re not seeing that you\'re doing that.').expect(0).toBe(1);
+      since('We\'d like you to query the giftProductInfo property directly for the album name, and we\'re not seeing that you\'re doing that.').expect(0).toBe(1);
     }
     
   }));

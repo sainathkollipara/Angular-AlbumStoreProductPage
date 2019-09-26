@@ -60,8 +60,8 @@ describe("ProductListComponent", () => {
     );
 
     assert(
-      anchorTag.text().match(/\s*{{\s*product.albumName\s*}}\s*/),
-      "It doesn't look like that the opening and closing anchor tags are wrapping around `{{product.albumName}}`."
+      anchorTag.text().match(/\s*{{\s*product.categoryDescription\s*}}\s*/),
+      "It doesn't look like that the opening and closing anchor tags are wrapping around `{{product.categoryDescription}}`."
     );
 
     assert(

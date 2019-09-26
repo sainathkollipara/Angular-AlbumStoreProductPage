@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Album } from '../album';
+import { GiftProduct } from '../giftproduct';
 
 import { ProductService } from '../product.service'
 
@@ -11,13 +11,13 @@ import { ProductService } from '../product.service'
 })
 export class ProductTracklistingComponent implements OnInit {
 
-  albumInfo: Album;
+  giftProductInfo: GiftProduct;
 
   constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-    this._productService.getAlbum(1).subscribe(response => 
-      this.albumInfo = response );
+    this._productService.getGiftProduct(1).subscribe(response =>
+      this.giftProductInfo = response );
   }
 
 }

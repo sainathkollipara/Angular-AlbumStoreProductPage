@@ -4,7 +4,7 @@ const parse5 = require("parse5");
 const helpers = require("../helpers");
 
 describe("ProductDescription", () => {
-  it("should use album name data from the albumInfo property in the HTML template @product-description-html-uses-dynamic-albuminfo-name", () => {
+  it("should use album name data from the giftProductInfo property in the HTML template @product-description-html-uses-dynamic-albuminfo-name", () => {
     const productPageFile = helpers.readFile(
       "src/app/product-description/product-description.component.html"
     );
@@ -26,8 +26,8 @@ describe("ProductDescription", () => {
     );
 
     assert(
-      albumNameDiv.text().match(/{{\s*albumInfo\?\.album\.name\s*}}/),
-      "We'd like you to query the `albumInfo` property directly for the album name, and we're not seeing that you're doing that."
+      albumNameDiv.text().match(/{{\s*giftProductInfo\?\.album\.name\s*}}/),
+      "We'd like you to query the `giftProductInfo` property directly for the album name, and we're not seeing that you're doing that."
     );
   });
 });

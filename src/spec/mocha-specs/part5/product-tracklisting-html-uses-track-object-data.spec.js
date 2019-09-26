@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 const helpers = require("../helpers");
 
 describe("ProductTracklisting", () => {
-  it("should use data from the albumInfo.tracks property in the HTML template @product-tracklisting-html-uses-track-object-data", () => {
+  it("should use data from the giftProductInfo.tracks property in the HTML template @product-tracklisting-html-uses-detail-object-data", () => {
     let tracklisting;
     let element;
     const productTracklistingFile = helpers.readFile(
@@ -17,9 +17,9 @@ describe("ProductTracklisting", () => {
     const productListing = parse5.serialize(productTracklistingNodes[0]);
     let $ = cheerio.load(productListing);
     const li = $("li");
-    const trackNumber = $(".track-number");
-    const trackName = $(".track-name");
-    const trackTime = $(".track-time");
+    const trackNumber = $(".detail-number");
+    const trackName = $(".detail-name");
+    const trackTime = $(".detail-time");
     const trackPrice = $(".price-and-buy");
 
     helpers.readFile(
@@ -68,38 +68,38 @@ describe("ProductTracklisting", () => {
     assert(
       li
         .attr()
-        ["*ngfor"].match(/\s*let\s*track\s*of\s*albumInfo\?.album.tracks/),
-      "The `ngFor` directive doesn't have `let track of albumInfo?.album.tracks` as its value."
+        ["*ngfor"].match(/\s*let\s*detail\s*of\s*giftProductInfo\?.album.tracks/),
+      "The `ngFor` directive doesn't have `let detail of giftProductInfo?.album.tracks` as its value."
     );
 
     assert(
-      trackNumber.hasClass("track-number"),
-      "The ProductTrackinglistComponent should have a `span` with a class of `track-number`."
+      trackNumber.hasClass("detail-number"),
+      "The ProductTrackinglistComponent should have a `span` with a class of `detail-number`."
     );
 
     assert(
-      trackNumber.text().match(/\s*{{\s*track.trackNumber\s*}}\s*/),
-      "The ProductTrackinglistComponent should have a `span` with a class of `track-number` with a text of `{{track.trackNumber}}`."
+      trackNumber.text().match(/\s*{{\s*detail.trackNumber\s*}}\s*/),
+      "The ProductTrackinglistComponent should have a `span` with a class of `detail-number` with a text of `{{detail.trackNumber}}`."
     );
 
     assert(
-      trackName.hasClass("track-name"),
-      "The ProductTrackinglistComponent should have a `span` with a class of `track-name`."
+      trackName.hasClass("detail-name"),
+      "The ProductTrackinglistComponent should have a `span` with a class of `detail-name`."
     );
 
     assert(
-      trackName.text().match(/\s*{{\s*track.trackName\s*}}\s*/),
-      "The ProductTrackinglistComponent should have a `span` with a class of `track-name` with a text of `{{track.trackName}}`."
+      trackName.text().match(/\s*{{\s*detail.trackName\s*}}\s*/),
+      "The ProductTrackinglistComponent should have a `span` with a class of `detail-name` with a text of `{{detail.trackName}}`."
     );
 
     assert(
-      trackTime.hasClass("track-time"),
-      "The ProductTrackinglistComponent should have a `span` with a class of `track-time`."
+      trackTime.hasClass("detail-time"),
+      "The ProductTrackinglistComponent should have a `span` with a class of `detail-time`."
     );
 
     assert(
-      trackTime.text().match(/\s*{{\s*track.trackLength\s*}}\s*/),
-      "The ProductTrackinglistComponent should have a `span` with a class of `track-time` with a text of `{{track.trackLength}}`."
+      trackTime.text().match(/\s*{{\s*detail.trackLength\s*}}\s*/),
+      "The ProductTrackinglistComponent should have a `span` with a class of `detail-time` with a text of `{{detail.trackLength}}`."
     );
 
     assert(
@@ -108,8 +108,8 @@ describe("ProductTracklisting", () => {
     );
 
     assert(
-      trackPrice.text().match(/\s*{{\s*track.trackPrice\s*}}\s*/),
-      "The ProductTrackinglistComponent should have a `span` with a class of `price-and-buy` with a text of `{{track.trackPrice}}`."
+      trackPrice.text().match(/\s*{{\s*detail.trackPrice\s*}}\s*/),
+      "The ProductTrackinglistComponent should have a `span` with a class of `price-and-buy` with a text of `{{detail.trackPrice}}`."
     );
   });
 });

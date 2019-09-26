@@ -54,7 +54,7 @@ describe("ProductList", () => {
     );
 
     assert(
-      li.text().match(/\s*{{\s*product.albumName\s*}}\s*/),
+      li.text().match(/\s*{{\s*product.categoryDescription\s*}}\s*/),
       "The album names in your HTML template don't match the album names in the `products` JSON response."
     );
   });

@@ -23,17 +23,17 @@ describe('ProductTracklisting', function() {
 
       let variable_used_to_capture_response = match2[1].match(/\s*(\w+)\s*\=/);
 
-      let expression = variable_used_to_capture_response[1] + "\\s*\\=\\>\\s*this\\.albumInfo\\s*\\=\\s*" + variable_used_to_capture_response[1]
+      let expression = variable_used_to_capture_response[1] + "\\s*\\=\\>\\s*this\\.giftProductInfo\\s*\\=\\s*" + variable_used_to_capture_response[1]
       let regex = new RegExp(expression, 'g')
 
-      assert(Array.isArray(match2[1].match(regex)), "The call to `getAlbum()` in ProductTracklisting's `ngOnInit()` method body isn't subscribing to the response and assigning it to `this.albumInfo`.")
+      assert(Array.isArray(match2[1].match(regex)), "The call to `getAlbum()` in ProductTracklisting's `ngOnInit()` method body isn't subscribing to the response and assigning it to `this.giftProductInfo`.")
     } else {
       assert(false, "The ProductTracklisting `ngOnInit()` method body isn't making the correct call to the ProductService's `getAlbum` method.");
     }
 
   });
 
-  it(`should define a class property named albumInfo @product-tracklisting-ngoninit-calls-getalbum`, function () {
+  it(`should define a class property named giftProductInfo @product-tracklisting-ngoninit-calls-getalbum`, function () {
     let file;
     try {
       file = fs.readFileSync(__dirname + '/../../../app/product-tracklisting/product-tracklisting.component.ts').toString();
@@ -42,7 +42,7 @@ describe('ProductTracklisting', function() {
     }
     let re = /ProductTracklistingComponent\s*implements\s*OnInit\s*\{\s*(\w+)/
     let match = file.match(re);
-    assert(match[1] == 'albumInfo', "The ProductTracklisting doesn't have a class property named `albumInfo`.")
+    assert(match[1] == 'giftProductInfo', "The ProductTracklisting doesn't have a class property named `giftProductInfo`.")
   });
 
 });

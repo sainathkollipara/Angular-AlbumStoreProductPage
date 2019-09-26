@@ -1,6 +1,6 @@
-# Build An Album Store Product Page With Angular
+# Build An GiftProduct Store Product Page With Angular
 
-This repo contains the code for the Pluralsight Project "Build An Album Store Product Page With Angular," located here: https://app.pluralsight.com/projects/build-an-album-store-product-page-with-angular/
+This repo contains the code for the Pluralsight Project "Build An GiftProduct Store Product Page With Angular," located here: https://app.pluralsight.com/projects/build-an-album-store-product-page-with-angular/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 

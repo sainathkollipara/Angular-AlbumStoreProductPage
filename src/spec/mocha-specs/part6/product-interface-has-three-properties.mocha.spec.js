@@ -43,7 +43,7 @@ describe('Product Interface', function () {
     assert(idValueFound, "The Product Interface's `id` property isn't typed as `number`.");
   });
 
-  it(`should have an artistName property of type string @product-interface-has-three-properties`, function () {
+  it(`should have an categoryName property of type string @product-interface-has-three-properties`, function () {
     let file
     try {
       file = fs.readFileSync(__dirname + '/../../../app/product.ts').toString();
@@ -72,18 +72,18 @@ describe('Product Interface', function () {
     let artistNameKeyFound = false
       , artistNameValueFound = false
     for (let i = 0; i < properties.length; i++) {
-      if (properties[i].key == 'artistName') {
+      if (properties[i].key == 'categoryName') {
         artistNameKeyFound = true;
         if (properties[i].value.match(new RegExp(/string/))) {
           artistNameValueFound = true;
         }
       }
     }
-    assert(artistNameKeyFound, "The Product Interface doesn't define a property named `artistName`.");
-    assert(artistNameValueFound, "The Product Interface's `artistName` property isn't typed as `string`.");
+    assert(artistNameKeyFound, "The Product Interface doesn't define a property named `categoryName`.");
+    assert(artistNameValueFound, "The Product Interface's `categoryName` property isn't typed as `string`.");
   });
 
-  it(`should have an albumName property of type string @product-interface-has-three-properties`, function () {
+  it(`should have an categoryDescription property of type string @product-interface-has-three-properties`, function () {
     let file
     try {
       file = fs.readFileSync(__dirname + '/../../../app/product.ts').toString();
@@ -112,14 +112,14 @@ describe('Product Interface', function () {
     let albumNameKeyFound = false
       , albumNameValueFound = false
     for (let i = 0; i < properties.length; i++) {
-      if (properties[i].key == 'albumName') {
+      if (properties[i].key == 'categoryDescription') {
         albumNameKeyFound = true;
         if (properties[i].value.match(new RegExp(/string/))) {
           albumNameValueFound = true;
         }
       }
     }
-    assert(albumNameKeyFound, "The Product Interface doesn't define a property named `albumName`.");
-    assert(albumNameValueFound, "The Product Interface's `albumName` property isn't typed as `string`.");
+    assert(albumNameKeyFound, "The Product Interface doesn't define a property named `categoryDescription`.");
+    assert(albumNameValueFound, "The Product Interface's `categoryDescription` property isn't typed as `string`.");
   });
 });

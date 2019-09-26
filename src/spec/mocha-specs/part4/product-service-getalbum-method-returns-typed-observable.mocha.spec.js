@@ -14,7 +14,7 @@ describe('ProductService getAlbum Method', function () {
     assert(Array.isArray(file.match(re)) && file.match(re) != null, "The Observable type hasn't been imported from rxjs yet.");
   });
 
-  it(`should return an Observable typed to Album @product-service-getalbum-method-returns-typed-observable`, function () {
+  it(`should return an Observable typed to GiftProduct @product-service-getalbum-method-returns-typed-observable`, function () {
     let file;
     try {
       file = fs.readFileSync(__dirname + '/../../../app/product.service.ts').toString();
@@ -27,10 +27,10 @@ describe('ProductService getAlbum Method', function () {
     
     let the_type = match[1].trim();
 
-    let re2 = /\s*\:\s*Observable\<Album\>/
+    let re2 = /\s*\:\s*Observable\<GiftProduct\>/
     let match2 = the_type.match(re2);
 
     assert(Array.isArray(match2), "The `getAlbum` method doesn't have the correct return type.")
-    assert(match2[0].includes('Observable<Album>'), "The `getAlbum` method doesn't have the correct return type.")
+    assert(match2[0].includes('Observable<GiftProduct>'), "The `getAlbum` method doesn't have the correct return type.")
   });
 });

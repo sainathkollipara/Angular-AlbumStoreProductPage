@@ -4,7 +4,7 @@ const parse5 = require("parse5");
 const helpers = require("../helpers");
 
 describe("ProductDescription", () => {
-  it("should use release date data from the albumInfo property in the HTML template @product-description-html-uses-dynamic-albuminfo-releasedate", () => {
+  it("should use release date data from the giftProductInfo property in the HTML template @product-description-html-uses-dynamic-albuminfo-releasedate", () => {
     const productPageFile = helpers.readFile(
       "src/app/product-description/product-description.component.html"
     );
@@ -28,8 +28,8 @@ describe("ProductDescription", () => {
     assert(
       albumReleaseDate
         .text()
-        .match(/{{\s*albumInfo\?\.album\.releaseDate\s*}}/),
-      "We'd like you to query the albumInfo property directly for the release date, and we're not seeing that you're doing that."
+        .match(/{{\s*giftProductInfo\?\.album\.releaseDate\s*}}/),
+      "We'd like you to query the giftProductInfo property directly for the release date, and we're not seeing that you're doing that."
     );
   });
 });

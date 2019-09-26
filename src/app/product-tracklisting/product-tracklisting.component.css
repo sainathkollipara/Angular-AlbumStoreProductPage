@@ -15,3 +15,47 @@ li {
 button {
     line-height: 1;
 }
+
+.grid-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 10px;
+  }
+
+.product {
+    width: 200px;
+    height: 200px;
+    margin: 2px;
+    background-color: white;    
+    border-top: 1px solid black;
+    border-left: 1px solid black;    
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-grow: 1;
+}
+
+.product-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.product-details-1 {
+    height: 20px;
+    font-size: 11px;
+    color: gray;
+    align-self: flex-start;
+    padding: 10px;
+}
+
+.product-details-1 .price-1 {
+    font-weight: bold;
+}
+
+.product img {
+    max-width: 100px;
+    max-height: 100px;
+}

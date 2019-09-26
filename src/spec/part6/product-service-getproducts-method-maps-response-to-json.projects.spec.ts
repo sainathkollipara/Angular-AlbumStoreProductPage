@@ -67,11 +67,11 @@ describe('ProductService', () => {
         since('It looks like you\'re not returning the getProducts method\'s response as JSON.').expect(response._body).toBeUndefined();
         since('Your `getProducts` method is returning a JSON response, but not the correct JSON.  Are you sure your service class is setup correctly?').expect(response.length).toEqual(2);
         since('Your `getProducts` method is returning a JSON response, but not the correct JSON.  Are you sure your service class is setup correctly?').expect(response[0].id).toEqual(1);
-        since('Your `getProducts` method is returning a JSON response, but not the correct JSON.  Are you sure your service class is setup correctly?').expect(response[0].artistName).toEqual('The Prependers');
-        since('Your `getProducts` method is returning a JSON response, but not the correct JSON.  Are you sure your service class is setup correctly?').expect(response[0].albumName).toEqual('Opacity Zero');
+        since('Your `getProducts` method is returning a JSON response, but not the correct JSON.  Are you sure your service class is setup correctly?').expect(response[0].categoryName).toEqual('The Prependers');
+        since('Your `getProducts` method is returning a JSON response, but not the correct JSON.  Are you sure your service class is setup correctly?').expect(response[0].categoryDescription).toEqual('Opacity Zero');
         since('Your `getProducts` method is returning a JSON response, but not the correct JSON.  Are you sure your service class is setup correctly?').expect(response[1].id).toEqual(2);
-        since('Your `getProducts` method is returning a JSON response, but not the correct JSON.  Are you sure your service class is setup correctly?').expect(response[1].artistName).toEqual('Regular Expressionists');
-        since('Your `getProducts` method is returning a JSON response, but not the correct JSON.  Are you sure your service class is setup correctly?').expect(response[1].albumName).toEqual('Top, Right, Bottom, Left');
+        since('Your `getProducts` method is returning a JSON response, but not the correct JSON.  Are you sure your service class is setup correctly?').expect(response[1].categoryName).toEqual('Regular Expressionists');
+        since('Your `getProducts` method is returning a JSON response, but not the correct JSON.  Are you sure your service class is setup correctly?').expect(response[1].categoryDescription).toEqual('Top, Right, Bottom, Left');
       });
     }
   }));

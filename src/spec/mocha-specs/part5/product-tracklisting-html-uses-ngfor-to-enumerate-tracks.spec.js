@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 const helpers = require("../helpers");
 
 describe("ProductTracklisting", () => {
-  it("should use ngFor to enumerate through each track in an li tag @product-tracklisting-html-uses-ngfor-to-enumerate-tracks", () => {
+  it("should use ngFor to enumerate through each detail in an li tag @product-tracklisting-html-uses-ngfor-to-enumerate-tracks", () => {
     let tracklisting;
     let element;
     const productTracklistingFile = helpers.readFile(
@@ -64,8 +64,8 @@ describe("ProductTracklisting", () => {
     assert(
       li
         .attr()
-        ["*ngfor"].match(/\s*let\s*track\s*of\s*albumInfo\?.album.tracks/),
-      "The `ngFor` directive doesn't have `let track of albumInfo?.album.tracks` as its value."
+        ["*ngfor"].match(/\s*let\s*detail\s*of\s*giftProductInfo\?.album.tracks/),
+      "The `ngFor` directive doesn't have `let detail of giftProductInfo?.album.tracks` as its value."
     );
   });
 });

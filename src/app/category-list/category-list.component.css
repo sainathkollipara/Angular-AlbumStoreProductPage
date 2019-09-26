@@ -1,0 +1,10 @@
+.signout_btn{
+    text-transform: uppercase;
+    outline: none;
+    border: 10;
+    margin-bottom: 20px;
+    background-color: yellow;
+    line-height: 40px;
+    color: rgba(255, 255, 255, 0.952);
+    font-size: 16px;
+    }

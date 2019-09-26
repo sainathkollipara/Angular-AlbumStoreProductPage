@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "categoryName": "Christmas Gifts",
+    "categoryDescription": "Interesting Picks for this Christmas"
+  },
+  {
+    "id": 2,
+    "categoryName": "Birthday Gifts",
+    "categoryDescription": "Surprise Gifts for any Birthday"
+  },
+  {
+    "id": 3,
+    "categoryName": "Back to School",
+    "categoryDescription": "Start your school with these smart choices"
+  }
+]

@@ -78,7 +78,7 @@ describe('ProductTracklisting', () => {
     mock_backend = mockBackend;
   }));
 
-  it(`should use ngFor to enumerate through each track in an li tag @product-tracklisting-html-uses-ngfor-to-enumerate-tracks`, async(() => {
+  it(`should use ngFor to enumerate through each detail in an li tag @product-tracklisting-html-uses-ngfor-to-enumerate-tracks`, async(() => {
     since('The ProductTracklistingComponent doesn\'t exist - have you run the `ng` command to generate it yet?').expect(productTracklistingComponentExists).toBe(true);
 
     mock_backend.connections.subscribe((connection: MockConnection) => {

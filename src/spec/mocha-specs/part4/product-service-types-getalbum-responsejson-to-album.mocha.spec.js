@@ -3,7 +3,7 @@ let expect = require('chai').expect
 let assert = require('chai').assert
 
 describe('ProductService getAlbum Method', function() {
-  it(`should type response.json() to Album @product-service-types-getalbum-responsejson-to-album`, function () {
+  it(`should type response.json() to GiftProduct @product-service-types-getalbum-responsejson-to-album`, function () {
     let file;
     try {
       file = fs.readFileSync(__dirname + '/../../../app/product.service.ts').toString();
@@ -15,6 +15,6 @@ describe('ProductService getAlbum Method', function() {
     assert(Array.isArray(file.match(re)), "The `getAlbum` method isn't returning the correct response.");
     
     let responseJsonPart = match[1];
-    assert(responseJsonPart.includes('<Album>'), "You're not asserting that the type of `response.json()` is `Album`.");
+    assert(responseJsonPart.includes('<GiftProduct>'), "You're not asserting that the type of `response.json()` is `GiftProduct`.");
   });
 });
